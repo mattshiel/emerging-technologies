@@ -37,6 +37,23 @@ model.add(tf.keras.layers.Flatten())
 plt.imshow(x_train[0])
 plt.show()
 
+# Activation is what makes the neuron fire
+# tf.nn.relu is a very standard default activation function, it can be tweaked to possibly improve performance
+model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))
+# This layer is the output layer, the output layer will always have the number of classifications, 10 in this case
+model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))
+
+# Loss is, in simple terms, the degree of error
+# Neural Networks aren't necessarily trying to maximise efficiency but minimize loss
+model.compile(optimizer ='adam',
+             loss='sparse_categorical_crossentropy',
+             metrics=['accuracy'])
+
+#Train the model
+#An epoch is a full pass through the entire dataset
+model.fit(x_train, y_train, epochs=3)
+
 # File explorer image selection
 # while True:
 
