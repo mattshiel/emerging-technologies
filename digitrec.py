@@ -20,9 +20,23 @@ mnist = tf.keras.datasets.mnist
 # Load the dataset in to memory
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
+# Normalize the data
+# In this case rescaling the data
+x_train = tf.keras.utils.normalize(x_train, axis=1)
+x_test = tf.keras.utils.normalize(x_test, axis=1)
+
+#2 Types of models, Sequential is the most common
+model = tf.keras.models.Sequential()
+
+# Often times at the end of a CNN there will be a densely connected layer which needs to be flattened. It gets the output of the 
+# convolutional layers, flattens all of its structure to create a single long feature vector to be used by the 
+# dense layer for the final classification.
+model.add(tf.keras.layers.Flatten())
+
 # Plot digit to make sure everything is working
 plt.imshow(x_train[0])
 plt.show()
+
 # File explorer image selection
 # while True:
 
