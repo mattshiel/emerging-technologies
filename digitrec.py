@@ -87,9 +87,10 @@ def makePrediction(MNIST_data):
     predictions = active_model.predict(x_test)
 
     # Print out prediction
-    print(np.argmax(predictions[randTestImg]))
+    print('The model predicts this is a', np.argmax(predictions[randTestImg]))
 
     # Show what the number actually was
+    print('The image was actually: ')
     plt.imshow(x_test[randTestImg])
     plt.show()
 
