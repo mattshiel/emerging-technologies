@@ -4,8 +4,6 @@
 
 ## Student ID: G00338622
 
-This is my implementation of an Eliza chatbot in Go, based on the Eliza natural language processing program. This repository contains my project for my 4th year Emerging Technologies module in GMIT.
-
 **Repository Contents:**
 
 1. **NumPy Jupyter Notebook:** a jupyter notebook explaining the con- cepts behind and the use of the numpy random package, including plots of the various distributions.
